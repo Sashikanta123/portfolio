@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg-dark: #07090e;
+  --bg-surface: #0c111d;
+  --bg-card: rgba(17, 24, 39, 0.82);
+  --bg-card-hover: rgba(26, 36, 56, 0.95);
+  --bg-glass: rgba(15, 23, 42, 0.85);
+
+  --accent-cyan: #00d2ff;
+  --accent-teal: #00f2fe;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-emerald: #10b981;
+
+  /* Upgraded High-Visibility Light White Palette */
+  --text-main: #ffffff;
+  --text-body: #f1f5f9;
+  --text-light-white: #f8fafc;
+  --text-muted: #e2e8f0;
+  --text-subtle: #cbd5e1;
+
+  --border-glass: rgba(255, 255, 255, 0.15);
+  --border-cyan: rgba(0, 210, 255, 0.4);
+  --border-cyan-glow: rgba(0, 210, 255, 0.7);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --glow-cyan: 0 0 25px rgba(0, 210, 255, 0.25);
+  --glow-cyan-lg: 0 0 45px rgba(0, 210, 255, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-body);
+  line-height: 1.68;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(at 10% 10%, rgba(0, 210, 255, 0.09) 0px, transparent 45%),
+    radial-gradient(at 90% 20%, rgba(59, 130, 246, 0.08) 0px, transparent 40%),
+    radial-gradient(at 50% 70%, rgba(139, 92, 246, 0.07) 0px, transparent 50%),
+    radial-gradient(at 80% 90%, rgba(0, 242, 254, 0.08) 0px, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}
+
+/* High Contrast Light-White Text Utilities */
+p, .text-body {
+  color: #e6edf3 !important;
+}
+
+.text-muted {
+  color: #e2e8f0 !important;
+}
+
+.text-light {
+  color: #ffffff !important;
+}
+
+.text-subtle {
+  color: #cbd5e1 !important;
+}
+
+.text-cyan {
+  color: var(--accent-cyan) !important;
+}
+
+.text-teal {
+  color: var(--accent-teal) !important;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #ffffff 15%, var(--accent-cyan) 70%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, #3b82f6 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Glass Surface Styling */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.glass-pill {
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  color: #ffffff !important;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  padding: 0.38rem 1.15rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+}
+
+/* Section Header Structure */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  padding: 0.4rem 1.15rem;
+  border-radius: 9999px;
+  margin-bottom: 0.9rem;
+}
+
+.section-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  color: #e2e8f0 !important;
+  font-size: 1.08rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Interactive Buttons */
+.btn-cyan-primary {
+  background: linear-gradient(135deg, #00d2ff 0%, #0099ff 100%);
+  color: #07090e;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 210, 255, 0.28);
+}
+
+.btn-cyan-primary:hover {
+  background: linear-gradient(135deg, #38e1ff 0%, #00b4d8 100%);
+  color: #07090e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 210, 255, 0.45);
+}
+
+.btn-cyan-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(0, 210, 255, 0.5);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.75rem 1.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-cyan-outline:hover {
+  background: rgba(0, 210, 255, 0.15);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 210, 255, 0.25);
+}
+
+/* Pulse Keyframes */
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(0, 210, 255, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 210, 255, 0);
+  }
+}
+
+.live-pulse {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-dot 2s infinite;
+}
+
+/* Typewriter Cursor */
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 300;
+  color: var(--accent-cyan);
+  animation: blink 0.9s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Modal Overlay for High-Res Certificate Inspection */
+.cert-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 7, 12, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cert-modal-dialog {
+  background: #0d1320;
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  border-radius: 16px;
+  max-width: 960px;
+  width: 100%;
+  max-height: 92vh;
+  display: flex;
+  flex-column: column;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 210, 255, 0.25);
+}
+
+.cert-modal-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #090e18;
+}
+
+.cert-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  text-align: center;
+}
